@@ -1,0 +1,28 @@
+version: '2'
+services:
+  apache2:
+    image: dr4g0nsr/apache2
+    hostname: apache2
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - /var/www/html:/var/www/html
+  php:
+    image: dr4g0nsr/php55
+    hostname: php
+    restart: always
+    ports:
+      - '9000:9000'
+    volumes:
+      - /var/www/html:/var/www/html
+  mysql:
+    image: dr4g0nsr/mysql57
+    hostname: mysql
+    restart: always
+    ports:
+      - '3306:3306'
+    volumes:
+      - /var/www/html:/var/www/html
+volumes:
+  db:
