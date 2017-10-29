@@ -20,9 +20,11 @@ services:
     image: dr4g0nsr/mysql57
     hostname: mysql
     restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 34g345h34566j3567i3
     ports:
       - '3306:3306'
     volumes:
-      - /var/www/html:/var/www/html
+      - /var/lib/mysql_docker:/var/lib/mysql
 volumes:
   db:
