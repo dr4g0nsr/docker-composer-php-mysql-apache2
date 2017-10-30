@@ -22,9 +22,13 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 34g345h34566j3567i3
+      MYSQL_ROOT_HOST: localhost
+      #MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_INITDB_SKIP_TZINFO: 1
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: docker
     ports:
       - '3306:3306'
     volumes:
       - /var/lib/mysql_docker:/var/lib/mysql
-volumes:
-  db:
