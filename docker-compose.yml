@@ -8,6 +8,7 @@ services:
       - '80:80'
     volumes:
       - /var/www/html:/var/www/html
+      - ./apache2/config:/etc/apache2/sites-enabled
   php:
     image: dr4g0nsr/php55
     hostname: php
@@ -16,6 +17,7 @@ services:
       - '9000:9000'
     volumes:
       - /var/www/html:/var/www/html
+      - ./php/config:/usr/local/etc
   mysql:
     image: dr4g0nsr/mysql57
     hostname: mysql
@@ -32,3 +34,4 @@ services:
       - '3306:3306'
     volumes:
       - /var/lib/mysql_docker:/var/lib/mysql
+      - ./mysql/config:/etc/mysql/mysql.conf.d
